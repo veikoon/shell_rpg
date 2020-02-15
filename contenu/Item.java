@@ -1,3 +1,4 @@
+package contenu;
 public class Item{
 	private int poids;
 	private int prix;

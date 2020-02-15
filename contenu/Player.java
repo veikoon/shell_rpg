@@ -1,3 +1,4 @@
+package contenu;
 import classes.Classe;
 import races.Race;
 
@@ -14,8 +15,9 @@ public class Player{
 	private int intelligence;
 	private int charisme;
 	private ItemList inventaire;
+	private Place currentPlace;
 
-	public Player(int pArgent, int pPv, String pNom, Classe pClasse, Race pRace, int pForce, int pConstit, int pDext, int pSag, int pIntel, int pChar){
+	public Player(int pArgent, int pPv, String pNom, Classe pClasse, Race pRace, int pForce, int pConstit, int pDext, int pSag, int pIntel, int pChar, Place pPlace){
 		this.classe = pClasse;
 		this.race = pRace;
 		this.argent = pArgent + this.classe.getArgent();
@@ -28,6 +30,8 @@ public class Player{
 		this.intelligence = pIntel;
 		this.charisme = pChar;
 		this.inventaire = new ItemList();
+		this.currentPlace = pPlace;
+
 		this.setBonus();
 	}
 
@@ -51,10 +55,14 @@ public class Player{
 
 	public ItemList getInventory(){ return this.inventaire; }
 
+	public Place getPlace(){ return this.currentPlace; }
+
+	public void setPlace(Place pPlace){ this.currentPlace = pPlace; }
+
 	public String getInfo(){
 		String tempString = "";
 		int[] stats = this.getStats();
-		tempString += "\n" + this.getName() + "  (" + this.getClasse().nom + "," + this.getRace().nom + ")\n";
+		tempString += this.getName() + "  (" + this.getClasse().nom + "," + this.getRace().nom + ")\n";
 		tempString += ("\nStats :\n");
 		tempString += ("Force: 		  " + stats[0] + "\n");
 		tempString += ("Constitution: 	  " + stats[1] + "\n");

@@ -1,3 +1,4 @@
+package contenu;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ public class ItemList{
 	}
 
 
-    public Item getItem(final String pName){
+    public Item getItem(String pName){
         return this.itemList.get(pName);
     }
 
@@ -22,11 +23,11 @@ public class ItemList{
         return vList;
     }
 
-    public void addItem(final String pName, final Item pItem){
+    public void addItem(String pName, Item pItem){
         this.itemList.put(pName, pItem);
     }
 
-    public void removeItem(final String pName){
+    public void removeItem(String pName){
         this.itemList.remove(pName);
     }
 
@@ -39,11 +40,11 @@ public class ItemList{
         return vWeight;
     }
 
-    public boolean containsKey(final String pName){
+    public boolean containsKey(String pName){
         return this.itemList.containsKey(pName);
     }
     
-    public boolean containsValue(final Item pName){
+    public boolean containsValue(Item pName){
         return this.itemList.containsValue(pName);
     }
 
